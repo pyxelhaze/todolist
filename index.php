@@ -18,8 +18,8 @@ include 'db.php';
         <main>
             <div class="input-area">
                 <form action="add_task.php" method="post">
-                    <input type="text" name="task" placeholder="put your tasks here" required />
-                    <button class="btn" name="add">Add Task</button>
+                    <input class="task" type="text" name="task" placeholder="put your tasks here" required />
+                    <button class="btn" name="add">Add</button>
 
                 </form>
             </div>
@@ -37,41 +37,39 @@ include 'db.php';
                 <tbody>
 
                     <?php
-                $stmt = $conn->prepare("SELECT * FROM `task` ORDER BY `task_id` ASC");
-                if (!$stmt) {
-                    die('failed to prepare ' . $conn->connect_error);
-                }
-                $stmt->execute();
-                $result = $stmt->get_result();
+                    $stmt = $conn->prepare("SELECT * FROM `task` ORDER BY `task_id` ASC");
+                    if (!$stmt) {
+                        die('failed to prepare ' . $conn->connect_error);
+                    }
+                    $stmt->execute();
+                    $result = $stmt->get_result();
 
-                $count = 1;
-                while ($fetch = $result->fetch_assoc()) {
-                ?>
-                    <tr class="border-bottom">
-                        <td>
-                            <?= htmlspecialchars($count++) ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($fetch['task']) ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($fetch['status']) ?>
-                        </td>
-                        <td colspan="2" class="status">
-                            <?php
-                            if ($fetch['status'] != "Done") {
-                                echo '<a href="update_task.php?task_id=' . htmlspecialchars($fetch['task_id']) . '" class="btn-completed">✅</a>';
-                            }
-                            ?>
-                            <a href="delete_task.php?task_id=<?php echo htmlspecialchars($fetch['task_id']); ?>"
-                                class="btn-remove">❌</a>
-                        </td>
-                    </tr>
+                    $count = 1;
+                    while ($fetch = $result->fetch_assoc()) {
+                    ?>
+                        <tr class="border-bottom">
+                            <td>
+                                <?= htmlspecialchars($count++) ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($fetch['task']) ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($fetch['status']) ?>
+                            </td>
+                            <td colspan="2" class="status">
+                                <?php if ($fetch['status'] != "Done") : ?>
+                                    <a href="update_task.php?task_id=<?= htmlspecialchars($fetch['task_id']) ?>" class="btn-completed">✅</a>
+                                <?php endif; ?>
+                                <a href="delete_task.php?task_id=<?= htmlspecialchars($fetch['task_id']) ?>" class="btn-remove">❌</a>
+                            </td>
+
+                        </tr>
                     <?php
-                }
-                $stmt->close();
-                $conn->close();
-                ?>
+                    }
+                    $stmt->close();
+                    $conn->close();
+                    ?>
                 </tbody>
             </table>
         </div>

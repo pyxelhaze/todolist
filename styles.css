@@ -15,12 +15,11 @@ html {
 }
 .container {
   background-color: teal;
-  width: 150%;
+  max-width: 90%;
   padding: 5%;
   border-radius: 5px;
 }
 .heading {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,12 +27,26 @@ html {
   margin-bottom: 5%;
 }
 main {
-  border: 1px solid red;
   margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.input-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+form {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.task {
+  width: 80%;
 }
 /* table */
 .table-container {
@@ -43,7 +56,7 @@ main {
 }
 .table {
   width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse !important;
   border-spacing: 0;
 }
 
@@ -52,9 +65,13 @@ main {
   border-radius: 5px;
 }
 
-.table th,
+.table th {
+  border: 1px solid gray;
+  padding: 8px;
+  text-align: left;
+}
 .table td {
-  border: 1px solid #ddd;
+  border: darkgrey 1px solid;
   padding: 8px;
   text-align: left;
 }
@@ -79,7 +96,7 @@ main {
   width: 25%;
 }
 
-.table tbody tr:nth-child(even) {
+.table tbody tr {
   background-color: #f9f9f9;
 }
 
@@ -91,3 +108,7 @@ main {
   margin-right: 10px;
   text-decoration: none;
 }
+/* .status {
+  display: flex;
+  align-items: end;
+} */
