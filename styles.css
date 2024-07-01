@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+}
+.container {
+  background-color: teal;
+  width: 150%;
+  padding: 5%;
+  border-radius: 5px;
+}
+.heading {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+main {
+  border: 1px solid red;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* table */
+.table-container {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead {
+  background-color: rgb(124, 255, 255);
+  border-radius: 5px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 5%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 50%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 20%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 25%;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table td a {
+  margin-right: 10px;
+  text-decoration: none;
+}
