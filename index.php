@@ -57,7 +57,7 @@ include 'db.php';
                             <td>
                                 <?= htmlspecialchars($fetch['status']) ?>
                             </td>
-                            <td colspan="2" class="status">
+                            <td colspan="2" class="action">
                                 <?php if ($fetch['status'] != "Done") : ?>
                                     <a href="update_task.php?task_id=<?= htmlspecialchars($fetch['task_id']) ?>" class="btn-completed">✅</a>
                                 <?php endif; ?>

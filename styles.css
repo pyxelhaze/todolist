@@ -15,8 +15,7 @@ html {
 }
 .container {
   background-color: teal;
-  max-width: 90%;
-  padding: 5%;
+  padding: 2%;
   border-radius: 5px;
 }
 .heading {
@@ -25,6 +24,7 @@ html {
   justify-content: center;
   align-items: center;
   margin-bottom: 5%;
+  color: white;
 }
 main {
   margin-bottom: 5%;
@@ -56,7 +56,7 @@ form {
 }
 .table {
   width: 100%;
-  border-collapse: collapse !important;
+  border-collapse: collapse;
   border-spacing: 0;
 }
 
@@ -66,12 +66,12 @@ form {
 }
 
 .table th {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   padding: 8px;
   text-align: left;
 }
 .table td {
-  border: darkgrey 1px solid;
+  border: none;
   padding: 8px;
   text-align: left;
 }
@@ -108,7 +108,14 @@ form {
   margin-right: 10px;
   text-decoration: none;
 }
-/* .status {
-  display: flex;
-  align-items: end;
-} */
+.action {
+  display: flex; /* Aktiviert Flexbox für das Container-Element */
+  align-items: center; /* Zentriert die Flex-Elemente vertikal */
+  justify-content: flex-start; /* Stellt sicher, dass die Flex-Elemente von links nach rechts ausgerichtet sind */
+  gap: 10px; /* Fügt einen Abstand zwischen den Buttons hinzu */
+  width: 100%; /* Stellt sicher, dass das Element die volle Breite des Containers einnimmt */
+  padding: 0; /* Entfernt jegliches Padding */
+  margin: 0; /* Entfernt jegliches Margin */
+  border: none; /* Entfernt jeglichen Rahmen */
+  box-sizing: border-box; /* Inkludiert Padding und Border in die Gesamtbreite und -höhe des Elements */
+}
